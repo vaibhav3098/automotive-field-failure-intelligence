@@ -14,6 +14,10 @@ This project analyzes vehicle complaints reported to the **U.S. National Highway
 
 The analysis covers **418,884 complaint records** and focuses on component distribution, model-year patterns, and reported safety indicators.
 
+## 📖 Dataset
+The raw dataset is not included in this repository. 
+link: https://static.nhtsa.gov/odi/ffdd/cmpl/COMPLAINTS_RECEIVED_2020-2024.zip
+
 ## 🎯 Business Objectives
 
 - Identify the automotive components most frequently mentioned in complaints.
@@ -127,13 +131,14 @@ automotive-field-failure-intelligence/
 ├── README.md
 ├── powerbi/
 │   └── Automotive_Field_Failure_Intelligence.pbix
-├── python/
-│   └── complaint_analysis.ipynb
+├── notebooks/
+│   └── 01_Data_profiling.ipynb
+│   └── 02_Complaint_analysis.ipynb
 ├── sql/
 │   └── analysis_queries.sql
 └── screenshots/
-    ├── executive-overview.png
-    └── component-investigation.png
+    ├── executive_overview.png
+    └── component_investigation.png
 ```
 
 The filenames above are the intended structure. Update them to match the actual files committed to the repository.
@@ -144,7 +149,6 @@ The filenames above are the intended structure. Update them to match the actual 
 2. Review the SQL script to see how the dataset was queried and investigated.
 3. Explore the Python notebook for the narrative analysis and supporting investigation.
 
-The raw dataset is not included in this repository. Use the official [NHTSA website](https://www.nhtsa.gov/) to locate the relevant complaint data, and verify the dataset version and schema before reproducing the analysis.
 
 ## 💡 What I Learned
 
