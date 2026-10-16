@@ -37,7 +37,7 @@ The report is organized into two pages, moving from an overall view of the data 
 
 ### 1. Executive Overview
 
-![Executive Overview Dashboard](screenshots/executive-overview.png)
+![Executive Overview Dashboard](screenshots/executive_overview.png)
 
 **What this page tells us**
 
@@ -51,7 +51,7 @@ The page provides a starting point for identifying areas that may deserve a clos
 
 ### 2. Component & Vehicle Investigation
 
-![Component and Vehicle Investigation Dashboard](screenshots/component-investigation.png)
+![Vehicle Investigation Dashboard](screenshots/vehicle_investigation.png)
 
 **What this page tells us**
 
@@ -148,11 +148,11 @@ The raw dataset is not included in this repository. Use the official [NHTSA webs
 
 ## 💡 What I Learned
 
-This project helped me connect my automotive engineering background with practical data analysis. It reinforced the importance of checking data quality, choosing the right comparisons, and separating observed patterns from conclusions that the data cannot support.
+This project helped me connect my automotive engineering background with practical automotive warranty data analysis. It reinforced the importance of checking data quality, choosing the right comparisons, and separating observed patterns from conclusions that the data cannot support.
 
 It also gave me an opportunity to take an automotive problem area from database analysis through exploratory investigation and interactive reporting.
 
 ---
 
 **Author:** Vaibhav Sharma  
-**Focus:** Automotive Analytics | SQL | Python | Power BI
+**Focus:** Automotive Warranty Data Analytics | SQL | Python | Power BI
