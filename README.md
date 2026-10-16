@@ -129,7 +129,9 @@ The results need to be interpreted within the limits of the source data.
 
 ```text
 automotive-field-failure-intelligence/
-├── README.md
+├── dataset/
+│   └── raw.txt
+│   └── Import_Instructions_Excel_5-year.pdf
 ├── powerbi/
 │   └── automotive_Field_Failure_Intelligence.pbix
 ├── notebooks/
@@ -140,6 +142,7 @@ automotive-field-failure-intelligence/
 └── screenshots/
     ├── executive_overview.png
     └── component_investigation.png
+├── README.md
 ```
 
 The filenames above are the intended structure. Update them to match the actual files committed to the repository.
