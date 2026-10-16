@@ -16,7 +16,8 @@ The analysis covers **418,884 complaint records** and focuses on component distr
 
 ## 📖 Dataset
 The raw dataset is not included in this repository. 
-link: https://static.nhtsa.gov/odi/ffdd/cmpl/COMPLAINTS_RECEIVED_2020-2024.zip
+
+Link: https://static.nhtsa.gov/odi/ffdd/cmpl/COMPLAINTS_RECEIVED_2020-2024.zip
 
 ## 🎯 Business Objectives
 
@@ -130,7 +131,7 @@ The results need to be interpreted within the limits of the source data.
 automotive-field-failure-intelligence/
 ├── README.md
 ├── powerbi/
-│   └── Automotive_Field_Failure_Intelligence.pbix
+│   └── automotive_Field_Failure_Intelligence.pbix
 ├── notebooks/
 │   └── 01_Data_profiling.ipynb
 │   └── 02_Complaint_analysis.ipynb
