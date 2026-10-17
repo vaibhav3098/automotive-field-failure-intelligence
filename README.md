@@ -141,7 +141,7 @@ automotive-field-failure-intelligence/
 │   └── analysis_queries.sql
 └── screenshots/
     ├── executive_overview.png
-    └── component_investigation.png
+    └── vehicle_investigation.png
 ├── README.md
 ```
 
