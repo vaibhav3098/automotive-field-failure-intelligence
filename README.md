@@ -19,6 +19,19 @@ The raw dataset is not included in this repository.
 
 Link: https://static.nhtsa.gov/odi/ffdd/cmpl/COMPLAINTS_RECEIVED_2020-2024.zip
 
+### Data Source and Column Definitions
+
+This project uses NHTSA vehicle complaint records for exploratory automotive field-failure analysis.
+
+The dataset's accompanying import-instructions document contains **Appendix A**, which describes the source columns and their meanings.
+
+- **Source documentation:** [Import Instructions PDF](dataset/Import_Instructions_Excel_5-year.pdf)
+- **Project data dictionary:** Refer Appendix A of Source documentation for column name, column type and column description
+
+The data dictionary summarises the fields used in the analysis, including complaint identifiers, vehicle model information, component descriptions, complaint narratives, dates, mileage and reported safety indicators.
+
+NHTSA complaints are reports and should not be treated as confirmed failures. Complaint counts alone do not establish failure rates without suitable vehicle-population or exposure data.
+
 ## 🎯 Business Objectives
 
 - Identify the automotive components most frequently mentioned in complaints.
