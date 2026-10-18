@@ -132,16 +132,17 @@ automotive-field-failure-intelligence/
 ├── dataset/
 │   └── raw_data
 │   └── Import_Instructions_Excel_5-year.pdf
-├── powerbi/
-│   └── automotive_Field_Failure_Intelligence.pbix
 ├── notebooks/
 │   └── 01_Data_profiling.ipynb
 │   └── 02_Complaint_analysis.ipynb
-├── sql/
-│   └── analysis_queries.sql
+├── powerbi/
+│   └── automotive_Field_Failure_Intelligence.pbix
 └── screenshots/
     ├── executive_overview.png
     └── vehicle_investigation.png
+├── sql/
+│   └── analysis_queries.sql
+├── LICENSE
 ├── README.md
 ```
 
