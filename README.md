@@ -10,9 +10,9 @@
 
 Working in automotive R&D gave me an interest in understanding what happens after a vehicle reaches the customer. Beyond designing and developing components, complaint data can help identify recurring patterns and areas that may need further investigation.
 
-This project analyzes vehicle complaints reported to the **U.S. National Highway Traffic Safety Administration (NHTSA)** from 2020 to 2024. I used SQL to investigate complaint trends and component patterns, Python to explore complaint narratives, and Power BI to present the findings in an interactive report.
+This project analyzes 418,884 NHTSA vehicle complaint records received during 2020–2024. I used SQL Server for structured analysis, Python to explore complaint narratives, and Power BI to turn the findings into an interactive report.
 
-The analysis covers **418,884 complaint records** and focuses on component distribution, model-year patterns, and reported safety indicators.
+The project combines a broad complaint overview with a focused investigation of engine and cooling complaints for the 2017 Ford Escape.
 
 ## 📖 Dataset
 The raw dataset is not included in this repository. 
@@ -34,24 +34,20 @@ NHTSA complaints are reports and should not be treated as confirmed failures. Co
 
 ## 🎯 Business Objectives
 
-- Identify the automotive components most frequently mentioned in complaints.
-- Examine how complaint volumes change over time.
-- Compare component complaint patterns across vehicle model years.
-- Explore reported crash, fire, injury, and death indicators.
-- Investigate complaint narratives for recurring terms that may warrant further analysis.
-- Convert the analysis into a dashboard that makes the findings easier to explore.
+Identify component and model-year complaint patterns that warrant closer investigation, then connect those patterns to reported symptoms and individual complaint narratives.
 
 ## 🛠️ Tools & Technologies
 
 | Tool | How it was used |
 |---|---|
 | SQL Server | Data profiling, aggregation, trend analysis, and targeted investigations |
-| Python | Exploratory analysis of complaint narratives and keyword patterns |
+| Python/Pandas | Narrative preprocessing, keyword-based symptom screening, and export preparation |
+| Jupyter Notebook | Documented the analysis and investigation steps |
 | Power BI | Interactive dashboards, KPI cards, trend charts, and component/model-year comparisons |
 
 ## 📊 Power BI Dashboard
 
-The report is organized into two pages, moving from an overall view of the data to a more focused investigation.
+The report is organized into three pages, moving from an overall view of the data to a more focused investigation.
 
 ### 1. Executive Overview
 
@@ -78,6 +74,18 @@ The page provides a starting point for identifying areas that may deserve a clos
 - **Areas for further investigation:** Components and model years with notable complaint counts or shares can be examined more closely.
 
 This page moves beyond overall counts to explore how complaint patterns differ across vehicle model years. Comparisons should still account for differences in vehicle population and time in service.
+
+### 3. Engine & Cooling Investigation
+
+![Vehicle Investigation Dashboard](screenshots/engine_cooling_investigation.png)
+
+**What this page tells us**
+
+-Focuses on the 2017 Ford Escape cohort and connects the aggregate analysis to the underlying reports through:
+--Component complaint Pareto and cumulative contribution.
+--Ford Escape model-year complaint trend.
+--Four symptom keyword KPI cards.
+--Complaint-level table with component descriptions, symptom flags, signal counts, and narratives.
 
 ## 🔍 Key Findings
 
@@ -107,11 +115,23 @@ These patterns can help prioritize further investigation, but complaint frequenc
 
 Mileage (`MILES`) was missing in approximately **64% of records** in the initial data profile. This limits the usefulness of mileage-based comparisons and highlights why data quality needs to be assessed before drawing conclusions.
 
-### Exploratory narrative analysis
 
-For Ford Escape engine complaints associated with model years 2017–2019, approximately **71.1% of the selected complaint narratives contained coolant-related keywords**.
 
-This finding identifies a recurring text pattern worth investigating. It does not confirm that every complaint describes the same mechanical issue or that any particular vehicle is covered by a manufacturer service program.
+### Focused Ford Escape investigation
+The focused analysis uses vehicle model years 2001–2024, which is a different time dimension from the complaint-received period above.
+
+| Investigation stage | Finding |
+|---|---:|
+| Ford Escape cohort | 10,977 distinct complaints |
+| 2017 model year | 1,933 complaints |
+| Engine and Engine and Engine Cooling categories | 1,190 complaints |
+| Complaints matching at least one selected keyword group | 967 |
+| Coolant/antifreeze keyword matches within the 1,190-complaint cohort | 905 |
+
+The top three component categories accounted for approximately **74.39%** of the 2017 cohort.
+
+These findings help prioritize further review of engine and cooling complaints. They do not confirm a shared root cause or establish a vehicle failure rate.
+
 
 ## 🔄 Analysis Workflow
 
@@ -126,6 +146,20 @@ This finding identifies a recurring text pattern worth investigating. It does no
 
 4. **Power BI reporting**  
    Built a two-page interactive report to present the overall complaint picture and support component/model-year comparisons.
+
+```mermaid
+flowchart TD
+    A["NHTSA complaint data"] --> B["SQL: Profile and screen"]
+    B --> C["Identify component and model-year patterns"]
+    C --> D["Ford Escape: 10,977 complaints"]
+    D --> E["Prioritize 2017: 1,933 complaints"]
+    E --> F["Focus on engine and cooling categories"]
+    F --> G["1,190 complaints"]
+    G --> H["Python: Screen narrative keywords"]
+    H --> I["967 with at least one keyword signal"]
+    I --> J["Power BI: Compare patterns and inspect evidence"]
+```
+**Why this approach?** I narrowed the dataset in stages so the investigation remained focused and traceable. The 2017 cohort was selected because it had the highest raw complaint count among the analyzed Ford Escape model years. Python then helped identify recurring symptom language, while Power BI connected the aggregate results to individual complaints.
 
 ## ⚠️ Data Limitations
 
@@ -143,38 +177,41 @@ The results need to be interpreted within the limits of the source data.
 ```text
 automotive-field-failure-intelligence/
 ├── dataset/
-│   └── raw_data
 │   └── Import_Instructions_Excel_5-year.pdf
 ├── notebooks/
-│   └── 01_Data_profiling.ipynb
+│   ├── 01_Data_profiling.ipynb
 │   └── 02_Complaint_analysis.ipynb
-├── powerbi/
-│   └── automotive_Field_Failure_Intelligence.pbix
-└── screenshots/
-    ├── executive_overview.png
-    └── vehicle_investigation.png
 ├── sql/
 │   └── analysis_queries.sql
+├── powerbi/
+│   ├── automotive_Field_Failure_Intelligence.pbix
+│   └── powerbi_exports/
+│       ├── ford_escape_model_year_trend.csv
+│       ├── ford_escape_2017_component_pareto.csv
+│       └── ford_escape_2017_investigation.csv
+├── screenshots/
+│   ├── executive_overview.png
+│   ├── vehicle_investigation.png
+│   └── engine_cooling_investigation.png
 ├── LICENSE
-├── README.md
+└── README.md
 ```
-
-The filenames above are the intended structure. Update them to match the actual files committed to the repository.
 
 ## 🚀 How to Explore
 
-1. Open the Power BI report to explore complaint trends and component/model-year patterns.
-2. Review the SQL script to see how the dataset was queried and investigated.
-3. Explore the Python notebook for the narrative analysis and supporting investigation.
+1. **Power BI:** Start with the report to understand the findings and focused investigation.
+2. **SQL:** Review `analysis_queries.sql` to follow the screening, cohort selection, and validation.
+3. **Python:** Explore the notebooks for data profiling, narrative screening, and export preparation.
+4. **CSV exports:** Inspect the prepared tables used by the focused dashboard page.
 
 
 ## 💡 What I Learned
 
-This project helped me connect my automotive engineering background with practical automotive warranty data analysis. It reinforced the importance of checking data quality, choosing the right comparisons, and separating observed patterns from conclusions that the data cannot support.
+This project helped me apply my automotive engineering background to a structured analytics workflow: defining an investigation, narrowing the data, validating counts across SQL and Python, examining unstructured narratives, and presenting traceable findings in Power BI.
 
-It also gave me an opportunity to take an automotive problem area from database analysis through exploratory investigation and interactive reporting.
+It also reinforced the importance of separating observed patterns from conclusions that the data cannot support.
 
 ---
 
 **Author:** Vaibhav Sharma  
-**Focus:** Automotive Warranty Data Analytics | SQL | Python | Power BI
+**Focus:** Automotive Field Quality | Warranty Analytics | SQL | Python | Power BI
