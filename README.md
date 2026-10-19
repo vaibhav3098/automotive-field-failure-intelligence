@@ -132,6 +132,19 @@ The top three component categories accounted for approximately **74.39%** of the
 
 These findings help prioritize further review of engine and cooling complaints. They do not confirm a shared root cause or establish a vehicle failure rate.
 
+## 💡 Business Implications & Recommended Investigation
+
+The focused analysis identified 1,933 complaints for the 2017 Ford Escape within the analyzed model-year cohort. Of these, 1,190 were classified under the ENGINE or ENGINE AND ENGINE COOLING component descriptions.
+
+Within this engine/cooling cohort, 905 complaint narratives matched the coolant/antifreeze keyword group. This concentration warrants further investigation, but keyword matches alone do not establish a common failure mechanism.
+
+**Recommended next steps for a field-quality team:**
+
+- **Validate the pattern:** Manually review a sample of coolant-related narratives to separate relevant cases from false positives.
+- **Connect complaints to engineering evidence:** Where available, compare service records, repair actions, mileage, repeat visits and confirmed component failures.
+- **Prioritize evidence collection:** Determine whether the reports point to a consistent symptom or multiple unrelated issues before deciding on a root-cause investigation.
+
+**Business value:** The analysis provides a structured way to prioritize complaint review and identify missing evidence. It does not quantify warranty savings, establish a failure rate or confirm a root cause.
 
 ## 🔄 Analysis Workflow
 
