@@ -145,7 +145,7 @@ These findings help prioritize further review of engine and cooling complaints. 
    Examined selected complaint narratives using keyword-based analysis to identify recurring terms and potential patterns for further investigation.
 
 4. **Power BI reporting**  
-   Built a two-page interactive report to present the overall complaint picture and support component/model-year comparisons.
+   Built a three-page interactive report to present the overall complaint picture and support component/model-year comparisons.
 
 ```mermaid
 flowchart TD
